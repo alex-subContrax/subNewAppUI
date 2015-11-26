@@ -1,0 +1,13 @@
+	.bowerrc
+	.editorconfig
+	bower.json
+	config.xml
+	gulpfile.js
+	hooks/
+	ionic.project
+	node_modules/
+	npm-debug.log
+	package.json
+	platforms/
+	plugins/
+	scss/
