@@ -5,14 +5,14 @@
             <ion-list>
                 <label class="item item-input">
                     <span class="input-label">Email</span>
-                    <input type="email" placeholder="Enter your Email ">
+                    <input type="email" placeholder="Enter your Email " ng-model="data.email">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="Enter a Password">
+                    <input type="password" placeholder="Enter a Password" ng-model="data.password">
                 </label>
             </ion-list>
-            <button class="button button-balanced button-block button-large">Sign up</button>
+            <button class="button button-balanced button-block button-large" ng-click="signUp()">Sign up</button>
         
         <a menu-close="" href="#/login" class="button button-positive button-block button-large icon-right ">I have an Account</a>
             </form>
