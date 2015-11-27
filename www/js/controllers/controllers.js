@@ -1,26 +1,76 @@
 angular.module('app.controllers', [])
   
-.controller('signupToSubContraXCtrl', function($scope, $ionicPopup, $state, signUpService) {
+.controller('signupToSubContraXCtrl', function($scope, $state, signUpService) {
     $scope.data = {};
  
     $scope.signUp = function() {
-        signUpService.signUpUser($scope.data.email, $scope.data.password).success(function(data) {
-            $state.go('tabsController.dashboard');
-        }).error(function(data) {
-            var alertPopup = $ionicPopup.alert({
-                title: 'Sign Up failed!',
-                template: 'Please input a valid email!'
-            });
-        });
+        console.log("SIGNUP email: " + $scope.data.email + " - PW: " + $scope.data.password);
+        $state.go('tabsController.dashboard');
     }
 })
    
-.controller('loginToSubContraXCtrl', function($scope) {
-
+.controller('loginToSubContraXCtrl', function($scope, $state, loginService) {
+      $scope.data = {};
+ 
+    $scope.login = function() {
+        console.log("LOGIN email: " + $scope.data.email + " - PW: " + $scope.data.password);
+        if($scope.isEmailAddressValid($scope.data.email) && $scope.isPasswordValid($scope.data.password))
+            {
+                $state.go('tabsController.dashboard');
+            }
+    }
+    
+    
+    $scope.isEmailAddressValid = function(email){
+        //TODO
+       return true; 
+    }
+    
+    
+    $scope.isPasswordValid = function(password){
+        //TODO
+       return true; 
+    }
 })
    
-.controller('dashboardCtrl', function($scope) {
+.controller('dashboardCtrl', function($scope, $ionicPopover, $ionicSideMenuDelegate) {
+    $scope.data = {};
+    // TODO- GET NUM OF NEW NOTIFICATIONS 
+    $scope.data.numberOfNotifications = 1;
+    
+    $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
 
+
+  // .fromTemplateUrl() method
+  $scope.popover = $ionicPopover.fromTemplateUrl('templates/notificationsPopover.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
+    
+    
 })
    
 .controller('jobsCtrl', function($scope) {

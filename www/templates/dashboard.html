@@ -1,6 +1,9 @@
 <ion-view title="Dashboard">
     <ion-nav-buttons side="left"> 
-        <a menu-close="" href="#/" class="button button-icon icon ion-navicon"></a>
+        <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right"> 
+        <button menu-close="" class="button button-icon icon ion-ios-bell" ng-click="popover.show($event)" ng-model="data.numberOfNotifications">{{data.numberOfNotifications > 0 ? data.numberOfNotifications :' ' }}</button>
     </ion-nav-buttons>
     <ion-content padding="'true'" class="has-header has-footer">
         <div class="list card">
