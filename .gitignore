@@ -1,4 +1,5 @@
 	.bowerrc
+	.brackets.json
 	.editorconfig
 	bower.json
 	config.xml
