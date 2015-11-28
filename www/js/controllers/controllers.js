@@ -1,15 +1,25 @@
 angular.module('app.controllers', [])
   
-.controller('signupToSubContraXCtrl', function($scope, $state, signUpService) {
+.controller('signupToSubContraXCtrl', ['$scope', '$state','signUpService', 'localStorage', function($scope, $state, signUpService, localStorage) {
+    
     $scope.data = {};
- 
+    
     $scope.signUp = function() {
         console.log("SIGNUP email: " + $scope.data.email + " - PW: " + $scope.data.password);
+        
+        localStorage.setObject('signInInfo',{
+            email: $scope.data.email,
+            password: $scope.data.password
+        });
+        
+       console.log($localstorage.getObject('signInInfo'));
+        
         $state.go('tabsController.dashboard');
+    
     }
-})
+}])
    
-.controller('loginToSubContraXCtrl', function($scope, $state, loginService) {
+.controller('loginToSubContraXCtrl', ['$scope', '$state', 'loginService', function($scope, $state, loginService) {
       $scope.data = {};
  
     $scope.login = function() {
@@ -31,9 +41,9 @@ angular.module('app.controllers', [])
         //TODO
        return true; 
     }
-})
+}])
    
-.controller('dashboardCtrl', function($scope, $ionicPopover, $ionicSideMenuDelegate) {
+.controller('dashboardCtrl', ['$scope', '$ionicPopover', '$ionicSideMenuDelegate', function($scope, $ionicPopover, $ionicSideMenuDelegate) {
     $scope.data = {};
     // TODO- GET NUM OF NEW NOTIFICATIONS 
     $scope.data.numberOfNotifications = 1;
@@ -71,40 +81,40 @@ angular.module('app.controllers', [])
   });
     
     
-})
+}])
    
-.controller('jobsCtrl', function($scope) {
+.controller('jobsCtrl', ['$scope', function($scope) {
 
-})
+}])
    
-.controller('myNetworkCtrl', function($scope) {
+.controller('myNetworkCtrl', ['$scope', function($scope) {
 
-})
+}])
       
-.controller('customersCtrl', function($scope) {
+.controller('customersCtrl', ['$scope', function($scope) {
 
-})
+}])
  
-.controller('settingsCtrl', function($scope) {
+.controller('settingsCtrl', ['$scope', function($scope) {
 
-})
+}])
 
-.controller('addAJobCtrl', function($scope, $ionicHistory) {
+.controller('addAJobCtrl', ['$scope', '$ionicHistory', function($scope, $ionicHistory) {
     $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };
-})
+}])
  
-.controller('addAContractorCtrl', function($scope, $ionicHistory) {
+.controller('addAContractorCtrl', ['$scope', '$ionicHistory', function($scope, $ionicHistory) {
         $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };
-})
+}])
 
-.controller('addACustomerCtrl', function($scope, $ionicHistory) {
+.controller('addACustomerCtrl', ['$scope', '$ionicHistory', function($scope, $ionicHistory) {
         $scope.myGoBack = function() {
     $ionicHistory.goBack();
   };
-})
+}])
 
 

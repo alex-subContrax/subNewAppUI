@@ -1,4 +1,4 @@
-angular.module('app.controllers').controller('resetPasswordPromptCtrl', function($scope, $ionicPopup) {
+angular.module('app.controllers').controller('resetPasswordPromptCtrl', ['$scope', '$ionicPopup', function($scope, $ionicPopup) {
      $scope.showResetPasswordPopup = function() {
   $scope.data = {}
 
@@ -25,4 +25,4 @@ angular.module('app.controllers').controller('resetPasswordPromptCtrl', function
         ]
       });
     };
-})
+}])
