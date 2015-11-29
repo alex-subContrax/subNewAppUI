@@ -1,5 +1,5 @@
 angular.module('app.services')
-.service('userService', [function($q) {
+.service('signUpService', [function($q) {
     return {
         
     }

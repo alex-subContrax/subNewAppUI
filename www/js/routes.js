@@ -14,7 +14,7 @@ angular.module('app.routes', [])
     .state('signupToSubContraX', {
       url: '/signUp',
       templateUrl: 'templates/signupToSubContraX.html',
-      controller: 'signupToSubContraXCtrl'
+      controller: 'signUpCtrl'
     })
         
       
@@ -24,7 +24,7 @@ angular.module('app.routes', [])
     .state('loginToSubContraX', {
       url: '/login',
       templateUrl: 'templates/loginToSubContraX.html',
-      controller: 'loginToSubContraXCtrl'
+      controller: 'logInCtrl'
     })
         
       
@@ -104,19 +104,19 @@ angular.module('app.routes', [])
     .state('addAJob', {
       url: '/addJob',
       templateUrl: 'templates/addAJob.html',
-      controller: 'addAJobCtrl'
+      controller: 'addJobCtrl'
     })
       
   .state('addAContractor', {
       url: '/addContractor',
       templateUrl: 'templates/addContractor.html',
-      controller: 'addAContractorCtrl'
+      controller: 'addContractorCtrl'
     })
   
   .state('addACustomer', {
       url: '/addCustomer',
       templateUrl: 'templates/addCustomer.html',
-      controller: 'addACustomerCtrl'
+      controller: 'addCustomerCtrl'
     })
       
     ;
