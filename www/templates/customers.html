@@ -18,9 +18,15 @@
 
         <form class="list"></form>
         <ion-list>
-            <ion-item menu-close="">Item 1</ion-item>
-            <ion-item menu-close="">Item 2</ion-item>
-            <ion-item menu-close="">Item 3</ion-item>
+            <ion-item menu-close="" ng-repeat="customer in customersCtrl.customers">
+                <h2>{{customer.name}}</h2>
+                <p>{{customer.address}}</p>
+                <p>{{customer.city}}</p>
+                <p>{{customer.telephone}}</p>
+                <ion-option-button class="button-energized">Edit</ion-option-button>
+                <ion-option-button class="button-assertive">Delete</ion-option-button>
+            </ion-item>
+
         </ion-list>
     </ion-content>
 </ion-view>

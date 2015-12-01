@@ -7,14 +7,14 @@
                 <div class="spacer" style="width: 300px; height: 26px;"></div>
                 <label class="item item-input">
                     <span class="input-label">Email</span>
-                    <input type="email" placeholder="Enter your Email " ng-model="data.email">
+                    <input type="email" placeholder="Enter your Email " ng-model="signUpCtrl.data.email">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="Enter a Password" ng-model="data.password">
+                    <input type="password" placeholder="Enter a Password" ng-model="signUpCtrl.data.password">
                 </label>
             </ion-list>
-            <button class="button button-balanced button-block button-large" ng-click="signUp()">Sign up</button>
+            <button class="button button-balanced button-block button-large" ng-click="signUpCtrl.signUp()">Sign up</button>
         
         <a menu-close="" href="#/login" class="button button-positive button-block button-large icon-right ">I have an Account</a>
             </form>

@@ -2,10 +2,17 @@ angular.module('app.controllers')
    
 
    
-.controller('dashboardCtrl', ['$scope', '$ionicPopover', '$ionicSideMenuDelegate', function($scope, $ionicPopover, $ionicSideMenuDelegate) {
-    $scope.data = {};
+.controller('dashboardCtrl', ['$scope', '$ionicPopover', '$ionicSideMenuDelegate', 'localStorage', function($scope, $ionicPopover, $ionicSideMenuDelegate, localStorage) {
+    
+    var ctrl = this;
+    
+    ctrl.jobs = localStorage.localDB.jobs;
+    
+    console.log(ctrl.jobs);
+    
+    ctrl.data = {};
     // TODO- GET NUM OF NEW NOTIFICATIONS 
-    $scope.data.numberOfNotifications = 1;
+    ctrl.data.numberOfNotifications = 1;
     
     $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();

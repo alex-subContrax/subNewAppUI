@@ -14,24 +14,18 @@
             </label>
         </form>
 
-        <ion-list></ion-list>
-        <form class="list"></form>
-        <ion-list>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
+
+        <ion-list  can-swipe="listCanSwipe">
+            <ion-item menu-close="" class="item-thumbnail-left" ng-repeat="contractor in myNetworkCtrl.contractors">
+                
+                <img ng-src="/img/avatar_placeholder.png">
+                <h2>{{contractor.name}}</h2>
+                <p>{{contractor.industry}}</p>
+                <p>{{contractor.telephone}}</p>
+                <ion-option-button class="button-energized">Edit</ion-option-button>
+                <ion-option-button class="button-assertive">Delete</ion-option-button>
             </ion-item>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
+            
         </ion-list>
     </ion-content>
 </ion-view>

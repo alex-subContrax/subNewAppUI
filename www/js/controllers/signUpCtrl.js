@@ -1,12 +1,20 @@
 angular.module('app.controllers')
   
-.controller('signUpCtrl', ['$scope', '$state','signUpService', '$localStorage', function($scope, $state, signUpService, $localstorage) {
+.controller('signUpCtrl', ['$state','signUpService', 'localStorage', function($state, signUpService, localStorage) {
     
-    $scope.data = {};
+    var ctrl = this;
     
-    $scope.signUp = function() {
-        console.log("SIGNUP email: " + $scope.data.email + " - PW: " + $scope.data.password);
+    ctrl.data = {};
+        console.log(localStorage.loadData("userEmail"));
+         console.log(localStorage.loadData("userPassword"));
+    ctrl.signUp = function() {
+        console.log("SIGNUP email: " + ctrl.data.email + " - PW: " + ctrl.data.password);
         
+
+        
+        
+        localStorage.storeData("userEmail",ctrl.data.email);
+        localStorage.storeData("userPassword",ctrl.data.password);
         
         $state.go('tabsController.dashboard');
     

@@ -1,6 +1,10 @@
 angular.module('app.controllers')
    
       
-.controller('customersCtrl', ['$scope', function($scope) {
-
+.controller('customersCtrl', ['localStorage', function(localStorage) {
+    var ctrl = this;
+    
+    ctrl.customers = localStorage.localDB.customers;
+    
+    console.log(ctrl.customers);
 }])

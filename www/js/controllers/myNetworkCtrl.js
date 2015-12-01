@@ -1,6 +1,10 @@
 angular.module('app.controllers')
    
    
-.controller('myNetworkCtrl', ['$scope', function($scope) {
-
+.controller('myNetworkCtrl', ['localStorage', function(localStorage) {
+    var ctrl = this;
+    
+    ctrl.contractors = localStorage.localDB.contractors;
+    
+    console.log(ctrl.contractors);
 }])
