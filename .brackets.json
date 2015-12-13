@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/Alex/Dropbox/subContraXApp/platforms/ios/build/emulator/subContraXApp.app/www/lib/ionic/js/ionic.min.js",
+        "/Users/Alex/Dropbox/subContraXApp/platforms/ios/cordova/lib/clean.js",
+        "/Users/Alex/Dropbox/subContraXApp/platforms/ios/platform_www/plugins/cordova-plugin-console/www/console-via-logger.js",
+        "/Users/Alex/Dropbox/subContraXApp/tests/unit-tests.conf.js"
+    ]
+}

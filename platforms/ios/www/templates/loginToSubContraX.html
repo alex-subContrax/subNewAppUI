@@ -1,0 +1,22 @@
+<ion-view title="Login to SubContraX">
+    <ion-content padding="'true'" class="has-header">
+        <form class="list">
+            <div class="spacer" style="width: 300px; height: 26px;"></div>
+            <ion-list>
+                <label class="item item-input" name="userEmail">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Enter your email" ng-model="data.email">
+                </label>
+                <label class="item item-input" name="userPassword">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Enter your Password" ng-model="data.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button menu-close="" class="button button-positive button-block button-large" ng-click="login()" >Log in</button>
+            <a menu-close="" href="#/signUp" class="button button-balanced button-clear button-block button-large">Or create an Account</a>
+            <button menu-close="" class="button button-assertive button-clear button-block button-large" ng-controller="resetPasswordPromptCtrl" ng-click="showResetPasswordPopup()">Forgot My Password</button>
+
+        </form>
+    </ion-content>
+</ion-view>
