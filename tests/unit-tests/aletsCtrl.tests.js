@@ -18,7 +18,7 @@ describe('AlertsCtrl',function(){
             
   describe('#getAlerts', function(){    
       it('should get an order object', function () {
-      expect(alertsCtrl).toEqual(true);
+      expect(alertsCtrl).toBeDefined();
   });
       
      // it('should return empty array', function(){
